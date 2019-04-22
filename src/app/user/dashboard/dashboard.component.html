@@ -1,0 +1,53 @@
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+<div *ngIf="!loading">
+  <div class="addComp">
+    <div class="addQuote">
+      <form #addQuote="ngForm" autocomplete="off">
+        <table class="addTable">
+          <tr>
+            <td>
+              <!-- <textarea class="input-group" name="newQuote" [(ngModel)]="product.newQuote" placeholder="Enter Quote" required #thisField="ngModel"
+                autocomplete="off"></textarea> -->
+              <mat-form-field style="width: 100%" hideRequiredMarker>
+                <textarea autosize matInput placeholder="New Post" name="newQuote" [(ngModel)]="product.newQuote" required #thisField="ngModel"
+                  autocomplete="off"></textarea>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+      <button mat-stroked-button color="accent" (click)="add()" *ngIf="!submitting" [disabled]="addQuote.invalid">Send</button>
+      <button mat-stroked-button color="disabled" disabled=true *ngIf="submitting">Adding..</button>
+    </div>
+  </div>
+  <br/>
+  <br/>
+
+  <div *ngFor="let product of products; let i= index">
+    <div class="card text-white bg-dark mb-3">
+      <span style="white-space: pre-line" class="card-body card-text">
+        {{product.AllQuotes}}
+      </span>
+    </div>
+    <table class="table">
+      <tr>
+        <td>
+          <button mat-raised-button color="accent" style="width: 100%; height: 100%" (mousedown)="mousedown(product.likes,i)" (click)="clickLike(product.likes, product._id,i)" (mouseup)="mouseup(product.likes,product._id)"
+            (mouseleave)="mouseup()" (touchstart)="mousedown(product.likes,i)" (touchend)="mouseup(product.likes,product._id)">
+            {{product.likes}} likes &#10084;
+          </button>
+
+        </td>
+        <td *ngIf="isMine(product.username)">
+          <button mat-flat-button color="warn" style="width: 100%; height: 100%" (click)="deleteQuote(product._id,i)">Delete</button>
+        </td>
+        <td *ngIf="!isMine(product.username)">
+          <button mat-stroked-button color="warn" style="width: 100%; height: 100%" (click)="reportQuote(product._id)">Report</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

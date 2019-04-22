@@ -1,0 +1,234 @@
+/* .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; 
+    animation: spin 2s linear infinite;
+    margin:0 auto;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin:100px 0px;
+  }
+  
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  } */
+
+  /* * {
+    box-sizing: border-box;
+  } */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFC400;
+  }
+  
+  .loader-container {
+    position: relative;
+    /* padding: 30vh; */
+    display: grid;
+    grid-template-columns: 20px 20px;
+    grid-template-rows: 20px 20px;
+    grid-template-areas:
+      "box1 ."
+      "box2 box3";
+    grid-gap: 5px;
+    justify-content: center;
+    width: 40%;
+    height: 80%;
+    background: #212529;
+    border-radius: 5px;
+  }
+  
+  .box-1 {
+    position: relative;
+    grid-area: box1;
+    border: 5px solid#eee;
+    animation-name: move-right,move-down;
+    animation-duration: 3s,3s;
+    animation-iteration-count: infinite,infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  .box-2 {
+    grid-area: box2;
+    position: absolute;
+    padding: 5px;
+    border: 5px solid#eee;
+    animation: move-up 3s infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  .box-3 {
+    grid-area: box3;
+    position: absolute;
+    padding: 5px;
+    border: 5px solid#eee;
+    animation: move-left 3s infinite;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes move-right {
+  /* move right */ 
+  
+    8.33333333% {
+      left: 0;
+      width: 20px;
+    }
+    
+    16.6666667% {
+      left: 0;
+      width: 45px;
+    } 
+  /* do nothing */
+  
+    25%, 33.3333333%, 41.6666666%, 50%, 
+    58.3333332%, 66.6666665%, 75% {
+      left: 25px;
+      width: 20px;
+    }
+  /* do the exact same thing that box 3(move down) is doing */
+  
+    83.3333333% {
+      top: 0;
+      left: 25px;
+      height: 20px;
+    }
+  
+    91.6666666% {
+      top: 0;
+      left: 25px;
+      height: 45px;
+    }
+  
+    100% {
+      top: 25px;
+      left: 25px;
+      height: 20px;
+    }
+  }
+  
+  @keyframes move-up {
+    /* do nothing */
+  
+    8.33333333%, 16.6666667%, 25% {
+      bottom: 0;
+      height: 20px;
+    }
+    /* move up */
+  
+    33.3333333% {
+      bottom: 0;
+      height: 20px;
+    }
+    
+    41.6666666% {
+      bottom: 0;
+      height: 45px;
+    }
+    
+    50% {
+      bottom: 25px;
+      height: 20px;
+    }
+  /* do nothing(stay there)*/
+  
+    58.3333332%, 66.6666665%, 75%, 
+    83.3333333%, 91.6666666%, 100% {
+      bottom: 25px;
+      height: 20px;
+    }
+  }
+  
+  @keyframes move-left {
+  /* do nothing */
+  
+    8.33333333%, 16.6666667%, 25%, 
+    33.3333333%, 41.6666666%, 50% {
+      right: 0;
+      width: 20px;
+    }
+  /* move left */
+  
+    58.3333332% {
+      right: 0;
+      width: 20px;
+    }
+    
+    66.6666665% {
+      right: 0;
+      width: 45px;
+    }
+    
+    75% {
+      right: 25px;
+      width: 20px;
+    }
+  /* do nothing(stay there- hold current position) */
+  
+    83.3333333%, 91.6666666%, 100% {
+      right: 25px;
+      width: 20px;
+    }
+  }
+  
+  @keyframes move-down {
+  /* do the exact same thing that box 1(move right) is doing */
+  
+    8.33333333% {
+      left: 0;
+      width: 20px;
+    }
+  
+    16.6666667% {
+      left: 0;
+      width: 45px;
+    }
+  
+    25% {
+      left: 25px;
+      width: 20px;
+    }
+  /* do nothing(stay there- hold current position)*/
+  
+    33.3333333%, 41.6666666%, 50%, 
+    58.3333332%, 66.6666665%, 75% {
+      left: 25px;
+      width: 20px;
+    }
+  /* move down */
+  
+    83.3333333% {
+      top: 0;
+      left: 25px;
+      height: 20px;
+    }
+    
+    91.6666666% {
+      top: 0;
+      left: 25px;
+      height: 45px;
+    }
+    
+    100% {
+      top: 25px;
+      left: 25px;
+      height: 20px;
+    }
+  } 

@@ -1,0 +1,49 @@
+.addComp{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background-color: #212529;
+    padding-bottom: 1rem;
+}
+.mb-3{
+    margin-bottom: 0px!important;
+}
+
+.addTable{
+    width:100%;
+}
+
+.table td{
+    padding:0px;
+    border:0px;
+}
+
+.table{
+    margin-bottom: 0px;
+}
+
+element.style {
+    padding-top: 0px;
+    border-top-width: 0px;
+}
+.card{
+    color:#212529;
+    border:0px;
+    border-radius: 0px;
+}
+
+.btn{
+    border-radius:0px;
+}
+
+.mat-stroked-button {
+    border:0px;
+}
+
+.mat-display-1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-right: 25%;
+    text-align: center;
+}

@@ -1,0 +1,51 @@
+<div class="login" *ngIf="!submitting">
+
+
+  <form #loginForm="ngForm" style="text-align: center" >
+    <mat-form-field appearance="outline" color="accent"  hideRequiredMarker>
+      <mat-label>Username</mat-label>
+      <input matInput autocapitalize="off" autocomplete="off" spellcheck="false" autocorrect="off" placeholder="Username" type="text" name="username" [(ngModel)]="user.username" (change)="changedData($event)" required >
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="warn" hideRequiredMarker>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"  type="password" name="password" [(ngModel)]="user.password" (change)="changedData($event)" required>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <br/>
+    <button mat-stroked-button color="accent" (click)="clickMe()" *ngIf="!submitting" [disabled]="loginForm.invalid">Step inside</button>
+    <button mat-stroked-button color="warn" routerLink="/auth/register">Register  </button>
+  </form>
+  <br/>
+  <app-about style="text-align: center"></app-about>
+
+  <!-- <span>Please login to proceed</span>
+  <form #loginForm="ngForm">
+    <label>Username</label>
+    <input type="text" name="username" [(ngModel)]="user.username" (change)="changedData($event)" placeholder="Enter your name here"
+      required #thisuser="ngModel" />
+    <br/>
+    <div [hidden]="thisuser.valid || thisuser.pristine">
+      Username is required
+    </div>
+    <label>Password</label>
+    <input type="password" name="password" [(ngModel)]="user.password" (change)="changedData($event)" placeholder="Enter password"
+      required #pass="ngModel" />
+    <br/>
+    <div [hidden]="pass.valid || pass.pristine">
+      Password is required.
+    </div>
+  </form>
+  <button (click)="clickMe()" *ngIf="!submitting" [disabled]="loginForm.invalid">Login</button>
+  <button *ngIf="submitting" [disabled]>Logging in....</button>
+  <br/>
+  <span>Dont have an account?</span>
+  <a routerLink="/auth/register">Register here</a>
+  <br/>
+  <a routerLink="/auth/forgot">Forgot Password?</a> -->
+</div>
+
+<div *ngIf="submitting" style="margin-left: 17%;">
+  <app-loading></app-loading>
+</div>

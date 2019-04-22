@@ -1,0 +1,43 @@
+.sidenav {
+  width: 25%;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+mat-sidenav-container, mat-sidenav-content {
+  overflow: initial;
+}
+
+mat-sidenav-container{
+  background-color:#212529;
+  color:#eee;
+}
+
+mat-sidenav{
+  background-color:#212529; /*#1d1d1d;*/
+}
+
+mat-toolbar , mat-nav-list a{
+  color:#eee;
+}
+
+mat-nav-list a:hover{
+  background-color: #343a40; /*#2d2d2d;*/
+  color:#eee;
+}
+
+.mat-drawer-side {
+   border:0px;
+}
+
+element.style {
+    margin-left: 270px;
+}

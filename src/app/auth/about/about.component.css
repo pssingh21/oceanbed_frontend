@@ -1,0 +1,86 @@
+.content{
+  justify-content: center;
+  background-color: #1e252c;
+}
+
+.aboutUs, .aboutDev, .footer{
+    padding-top: 2rem;
+}
+
+mat-list, mat-list-item{
+    text-align: center;
+}
+
+.mat-display-1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.listFeatures{
+    padding-left: 3rem;
+}
+
+.mat-h2{
+    text-align: left;
+}
+
+.table td{
+    padding:0px;
+    border:0px;
+}
+
+.table{
+    margin-bottom: 0px;
+}
+
+element.style {
+    padding-top: 0px;
+    border-top-width: 0px;
+}
+.card{
+    color:#212529;
+    border:0px;
+    border-radius: 0px;
+}
+
+.btn{
+    border-radius:0px;
+}
+
+.mat-stroked-button {
+    border:0px;
+}
+
+.mb-3{
+    margin-bottom: 0px!important;
+}
+
+.outer{
+    width:100%;
+    padding-left: 0rem;
+    text-align: center;
+}
+
+.examplePost{
+    margin:0 auto;
+    padding:0px;
+    max-width: 900px;
+}
+
+.aboutDev{
+    background-color: #212529;
+    padding-bottom: 2rem;
+}
+
+a{
+    color:#7fdbff;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.footer{
+    background-color: #242526;
+    padding-bottom: 2rem;
+}

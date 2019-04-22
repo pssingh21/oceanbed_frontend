@@ -1,0 +1,35 @@
+<div *ngIf="loading">
+  <app-loading></app-loading>
+</div>
+
+<div *ngIf="!loading">
+  <div *ngIf="productsAvl">
+    <div *ngFor="let product of products; let i= index">
+      <div class="card text-white bg-dark mb-3">
+        <span style="white-space: pre-line" class="card-body card-text" class="card-body card-text">
+          {{product.AllQuotes}}
+        </span>
+      </div>
+      <table class="table">
+        <tr>
+          <td>
+            <button mat-raised-button color="accent" style="width: 100%; height: 100%" (click)="clickLike(product.likes, product._id,i)"
+              (mousedown)="mousedown(product.likes,i)" (mouseup)="mouseup(product.likes,product._id)" (mouseleave)="mouseup()">
+              {{product.likes}} likes &#10084;
+            </button>
+          </td>
+          <td>
+            <button mat-stroked-button color="warn" style="width: 100%; height: 100%" (click)="deleteQuote(product._id,i)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="!productsAvl">
+    <div class="card text-white bg-danger mb-3" style="border-radius: 5px;" >
+      <span style="white-space: pre-line" class="card-body card-text" class="card-body card-text">
+        No posts yet!
+      </span>
+  </div>
+</div>

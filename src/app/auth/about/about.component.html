@@ -1,0 +1,95 @@
+<div class="content">
+  <div class="aboutUs">
+    <h1 class="mat-display-1">What is Oceanbed?</h1>
+    <div class="listFeatures">
+      <h2 class="mat-display-1" style="text-align: left; font-weight: 300">We are:</h2>
+      <mat-list>
+        <mat-list-item>Anonymous</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Authentic</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Humane</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Social</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Respectful</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Non-abusive</mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+    <br/>
+    <br/>
+
+    <h1 class="mat-display-1">Post Anonymously</h1>
+    <p class="mat-body">
+      Post without revealing your identity.
+      <br/>
+      <br/> Be you. No judgements.
+    </p>
+    <br/>
+    <br/>
+
+    <h1 class="mat-display-1">Like indefinitely.</h1>
+    <p class="mat-body">
+      Press and hold the like button to express the depth of your gratitude.
+    </p>
+    <br/>
+    <br/>
+
+    <div class="outer">
+      <div class="examplePost">
+        <div class="card text-white bg-dark mb-3">
+          <span style="white-space: pre-line; text-align: left;" class="card-body card-text">
+            The darkest nights make the brightest stars.
+          </span>
+        </div>
+        <table class="table">
+          <tr>
+            <td>
+              <button mat-raised-button color="accent" style="width: 100%; height: 100%" (mousedown)="mousedown(likes)" (click)="clickLike(likes)"
+                (mouseup)="mouseup()" (mouseleave)="mouseup()" (touchstart)="mousedown(likes)" (touchend)="mouseup()">
+                {{likes}} likes &#10084;
+              </button>
+            </td>
+            <td>
+              <button mat-stroked-button color="warn" style="width: 100%; height: 100%" (click)="reportQuote()">Report</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <br/>
+    <br/>
+
+    <h1 class="mat-display-1">Report offensive posts</h1>
+    <p class="mat-body">
+      Report inappropritate posts with the press of a button.
+    </p>
+    <br/>
+    <br/>
+  </div>
+
+  <div class="aboutDev">
+    <h1 class="mat-display-1">Behind the curtains</h1>
+
+    <div class="listFeatures">
+      <mat-list>
+        <mat-list-item>Developer:&nbsp; &nbsp; Peeyush Singh</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Contact: &nbsp; &nbsp;<a href="mailto:peeyushmansingh@gmail.com" target="blank">Email</a></mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Superpowers: &nbsp; &nbsp;
+          <a href="https://github.com/pssingh21" target="blank">Github</a>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </mat-list>
+    </div>
+  </div>
+
+  <div class="footer">
+    Copyright © Peeyush Singh. 2019.<br/>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Oceanbed</span> by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Peeyush Singh</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="blank">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+  </div>
+
+</div>

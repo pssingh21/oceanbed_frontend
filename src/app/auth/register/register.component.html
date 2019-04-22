@@ -1,0 +1,94 @@
+<div class="register">
+
+  <form #registerForm="ngForm" style="text-align: center">
+    <mat-form-field appearance="outline" color="accent"  hideRequiredMarker>
+      <mat-label>Username</mat-label>
+      <input matInput autocapitalize="off" autocomplete="off" spellcheck="false" autocorrect="off"  placeholder="Username" type="text" name="username" [(ngModel)]="user.username" (change)="changedData($event)" required #thisUser="ngModel">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <mat-hint [hidden]="thisUser.valid || thisUser.pristine">Username cannot be empty! </mat-hint>
+    </mat-form-field>
+    
+    <br/>
+
+    <mat-form-field appearance="outline" color="warn" hideRequiredMarker>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"  type="password" name="password" [(ngModel)]="user.password" (change)="changedData($event)" (change)="passMatch()" required #pass="ngModel">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-hint [hidden]="pass.valid || pass.pristine">Password cannot be empty! </mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" color="warn" hideRequiredMarker>
+      <mat-label>Confirm Password</mat-label>
+      <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'"  type="password" name="confirmPassword" [(ngModel)]="confirmPassword" (change)="passMatch()" required #passConf="ngModel">
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      <mat-hint [hidden]="passConf.valid || passConf.pristine">Password cannot be empty! </mat-hint>
+      <mat-hint [hidden]="match || passConf.pristine || passConf.untouched">Password don't match! </mat-hint>
+    </mat-form-field>
+    
+    <br/>
+
+    <mat-form-field appearance="outline" color="accent" hideRequiredMarker>
+        <mat-label>Email</mat-label>
+      <input matInput autocomplete="new-password" placeholder="Enter your email"  type="email" name="email" [formControl]="email" required [(ngModel)]="user.email" (change)="changedData($event)">
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+
+    <br/>
+
+    <button mat-stroked-button color="accent" (click)="clickMe()" *ngIf="!submitting" [disabled]="registerForm.invalid || !match || email.invalid">Register</button>
+    <button mat-stroked-button color="accent" *ngIf="submitting">Registering...</button>
+    <button mat-stroked-button color="warn" routerLink="/auth/login">Login</button>
+    <!-- <button mat-stroked-button color="accent" (click)="clickMe()" *ngIf="!submitting" [disabled]="loginForm.invalid">Step inside</button>
+    <button mat-stroked-button color="warn" routerLink="/auth/register">Register  </button> -->
+  </form>
+  <br/>
+
+  <!-- <form #registerForm="ngForm" style="text-align: center">
+    <table>
+      <tr>
+          <td><label>Username</label></td>
+          <td><input type="text" name="username" [(ngModel)]="user.username" (change)="changedData($event)" placeholder="Enter username" required #thisUser="ngModel"></td>
+          <td>
+            <div [hidden]="thisUser.valid || thisUser.pristine" >
+              Username cannot be empty
+            </div></td>
+        </tr>
+    <tr>
+        <td><label>Password</label></td>
+        <td><input type="password" name="password" [(ngModel)]="user.password" (change)="changedData($event)" (change)="passMatch()" placeholder="Enter password here" required #pass="ngModel"></td>    
+        <td>
+          <div [hidden]="pass.valid || pass.pristine" >
+            Password cannot be empty
+          </div>
+        </td>
+      </tr>
+    <tr>
+        <td><label>Confirm Password</label></td>
+        <td><input type="password" name="confirmPassword" [(ngModel)]="confirmPassword" (change)="passMatch()" placeholder="Password must match" required #passConf="ngModel" ></td>
+              <td><div [hidden]="passConf.valid || passConf.pristine" >
+                Password cannot be empty
+              </div>
+            </td>
+            <td>
+              <div [hidden]="match || passConf.pristine || passConf.untouched" >
+                Passwords dont match
+              </div>
+            </td>
+      </tr>
+      <tr>
+          <td><label>Email</label></td>
+          <td><input type="email" name="email" [(ngModel)]="user.email" (change)="changedData($event)" placeholder="Enter valid email address" required #mail="ngModel"></td>
+          <td>
+            <div [hidden]="mail.valid || mail.pristine" >
+              Email cannot be empty
+            </div>
+          </td>
+      </tr>
+    </table>
+  </form>
+  <button (click)="clickMe()" *ngIf="!submitting" [disabled]="registerForm.invalid || !match" >Register</button>
+  <button *ngIf="submitting">Registering..</button>
+  <button (click)="resetForm()" [disabled]="thisUser.pristine && pass.pristine && passConf.pristine && mail.pristine || submitting" >Reset</button><br/> -->
+
+</div>
+<app-about style="text-align: center"></app-about>
