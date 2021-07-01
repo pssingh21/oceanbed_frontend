@@ -1,4 +1,6 @@
-# OceanbedFrontend [⛔️ DEPRECATED] [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+# OceanbedFrontend [⛔️ DEPRECATED] 
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 This project is no longer supported, please consider using Ocen [Oceanbed 2.0 Frontend](https://github.com/pssingh21/oceanbed2.0frontend) instead.
 
