@@ -2,7 +2,7 @@
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-This project is no longer supported, please consider using Ocen [Oceanbed 2.0 Frontend](https://github.com/pssingh21/oceanbed2.0frontend) instead.
+This project is no longer supported, please consider using Ocen [Oceanbed 2.0 Frontend](https://github.com/pssingh21/oceanbed2.0frontend) [Oceanbed 2.0 Backend](https://github.com/pssingh21/oceanbed2.0backend) instead.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0.
 
